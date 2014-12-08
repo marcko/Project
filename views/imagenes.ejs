@@ -1,0 +1,33 @@
+<body>
+  
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                
+           
+             <% if(result==""){%>
+           <h1>No hay resultados</h1>
+
+     <%}%>
+                        
+
+               <% _.each(result,function(result){%>
+                    <h1>title:<%=result.title%></h1> 
+                    <p><%=result.author%></p> 
+                    <p><%=result.description%></p>  
+                    <p>  <%=result.price%></p>
+                   <img src=public/<%=result.uri%> alt="">
+                   
+
+
+
+<%})%>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>

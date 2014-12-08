@@ -1,0 +1,28 @@
+<body>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      
+      <% _.each(result,function(result){%>
+            
+
+            <ul>
+              
+                <li><%-result.title%></li>
+                <li> <%-result.author%></li>
+                <li><%-result.price%></li>
+
+            </ul>
+             
+           
+
+      <%})%>
+
+
+
+    </div>
+  </div>
+</div>
+
+</body>
