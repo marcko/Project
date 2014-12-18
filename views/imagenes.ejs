@@ -1,5 +1,4 @@
-<body>
-  
+
 
 
     <div class="container">
@@ -14,11 +13,11 @@
                         
 
                <% _.each(result,function(result){%>
-                    <h1>title:<%=result.title%></h1> 
+                    <h1><%=result.title%></h1> 
                     <p><%=result.author%></p> 
                     <p><%=result.description%></p>  
-                    <p>  <%=result.price%></p>
-                   <img src=public/<%=result.uri%> alt="">
+                    <p> <%=result.price%></p>
+                 <img src=public/<%=result.uri%> alt="">
                    
 
 
@@ -30,4 +29,3 @@
         </div>
     </div>
 
-</body>

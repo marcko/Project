@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-	createCategory: function(req, res){
+  createCategory: function(req, res){
     Category.create(req.body).exec(function (err, result){
       if(err) return res.notFound();
       return res.redirect('/');
@@ -28,4 +28,3 @@ module.exports = {
     });
   }
 };
-

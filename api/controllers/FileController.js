@@ -1,12 +1,5 @@
-/**
- * FileController
- *
- * @description :: Server-side logic for managing Files
- * @help        :: See http://links.sailsjs.org/docs/controllers
- */
-
 module.exports = {
-	
+  
 
   /**
    * `FileController.upload()`
@@ -49,7 +42,6 @@ module.exports = {
      /* else return res.json({
         files: uploadedFiles,
         textParams: req.body.title,
-
       });
 */    console.log(uploadedFiles);
     });
@@ -110,4 +102,3 @@ module.exports = {
     .pipe(res);
   }
 };
-

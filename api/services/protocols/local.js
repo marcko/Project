@@ -24,25 +24,34 @@ var validator = require('validator');
  */
 exports.register = function (req, res, next) {
   var email    = req.param('email')
+    , username = req.param('username')
     , password = req.param('password');
 
   if (!email) {
     req.flash('error', 'Error.Passport.Email.Missing');
     return next(new Error('No email was entered.'));
   }
+
+  if (!username) {
+    req.flash('error', 'Error.Passport.Username.Missing');
+    return next(new Error('No username was entered.'));
+  }
+
   if (!password) {
     req.flash('error', 'Error.Passport.Password.Missing');
     return next(new Error('No password was entered.'));
   }
 
-
   User.create({
-   email    : email
-  },function (err, user) {
+    username : username
+  , email    : email
+  }, function (err, user) {
     if (err) {
       if (err.code === 'E_VALIDATION') {
         if (err.invalidAttributes.email) {
           req.flash('error', 'Error.Passport.Email.Exists');
+        } else {
+          req.flash('error', 'Error.Passport.User.Exists');
         }
       }
 
@@ -126,6 +135,10 @@ exports.login = function (req, identifier, password, next) {
   if (isEmail) {
     query.email = identifier;
   }
+  else {
+    query.username = identifier;
+  }
+
   User.findOne(query, function (err, user) {
     if (err) {
       return next(err);
@@ -134,7 +147,9 @@ exports.login = function (req, identifier, password, next) {
     if (!user) {
       if (isEmail) {
         req.flash('error', 'Error.Passport.Email.NotFound');
-      } 
+      } else {
+        req.flash('error', 'Error.Passport.Username.NotFound');
+      }
 
       return next(null, false);
     }

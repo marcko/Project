@@ -56,7 +56,7 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
-  mongo: {
+   mongo: {
     adapter: 'sails-mongo',
     //url:"mongodb://marco:root@proximus.modulusmongo.net:27017/asop2yNo",
     host: process.env.MONGODB_PORT_27017_TCP_ADDR,
@@ -69,7 +69,6 @@ module.exports.connections = {
     // //sudo docker run -it --link mongodb:luis/mongodb --rm mongo sh -c 'exec mongo "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/test"'
 
   },
-
   /***************************************************************************
   *                                                                          *
   * PostgreSQL is another officially supported relational database.          *

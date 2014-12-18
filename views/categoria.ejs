@@ -4,11 +4,11 @@
 
      <% _.each(results.img,function(img){%>
 
-        <%= img.title%>
-         <%= img.author%>
+       <h1><%=  img.title%></h1>
+         <h2> <%= img.author%></h2>  
+          <img src=public/<%=img.uri%> alt="">
 
      <%})%>
 
   <%})%>
-
 </body>

@@ -17,8 +17,8 @@
 module.exports.passport = {
   local: {
     strategy: require('passport-local').Strategy
-  },
-/*
+  },/*
+
   twitter: {
     name: 'Twitter',
     protocol: 'oauth',

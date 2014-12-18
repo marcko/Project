@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-	index: function(req, res){
+  index: function(req, res){
     return res.view('homepage',{title:"welcome"});
   },
   // se suben datos de la imagen hacia la bd desde un form
@@ -29,4 +29,3 @@ module.exports = {
   return res.view('auth/account');
  }
 };
-
